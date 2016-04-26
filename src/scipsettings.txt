@@ -1,0 +1,2 @@
+limits/time=36000.0
+lp/threads=1
