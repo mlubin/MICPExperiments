@@ -4,7 +4,9 @@
 using Convex
 
 function loadModel(instanceID)
-    path = "$(homedir())/.julia/v0.4/MICPExperiments/MINLPLIB2/$instanceID.jl"
+    @show @__FILE__
+    path = joinpath(dirname(@__FILE__),"..","MINLPLIB2","$instanceID.jl")
+    @show path
     include(path)
     instanceIDNoHyphen = replace(instanceID, "-", "_")
     return eval(Symbol(instanceIDNoHyphen))()
