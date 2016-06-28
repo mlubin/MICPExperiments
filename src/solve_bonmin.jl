@@ -12,7 +12,7 @@ for file in files_name
   if !isdir(file_name)
     out_file = open(string(ascii(ARGS[3]), ".txt"), "a")
     println("NEW FILE $file_name")
-    system_string = ["$HOME/Bonmin-1.8.3/bin/bonmin", file_name, "bonmin.milp_solver=Cplex", "linear_solver=ma97", "bonmin.algorithm=B-OA", "bonmin.time_limit=36000"]
+    system_string = ["bonmin", file_name, "bonmin.milp_solver=Cplex", "linear_solver=ma97", "bonmin.algorithm=B-OA", "bonmin.time_limit=36000"]
     cputime = @elapsed run(`$system_string` |> "$HOME/bonmin_output.txt")
     remove_command = ["rm", sol_name]
     run(`$remove_command`) 
