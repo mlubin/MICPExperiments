@@ -1,0 +1,6 @@
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install numpy
+$ pip install matplotlib==1.5.3
+$ python gen_cputime.py
+$ python gen_cputime_soc.py
